@@ -1,0 +1,211 @@
+/* Global reset-ish */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #ffffff;
+  color: #111827;
+  line-height: 1.5;
+}
+
+/* Utility container */
+.ts-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header and nav */
+.ts-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.ts-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ts-logo {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Shiners Name logo size */
+.ts-logo-image img {
+  height: 92px;
+  width: auto;
+  filter: contrast(1.5)
+}
+
+/* Base nav */
+.ts-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Centered, larger, bold nav */
+.ts-nav-main {
+  flex: 1;
+  justify-content: flex-start;  /* align nav right after logo */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-left: 4rem;            /* small space between logo and tabs */
+  gap: 2rem;                  /* closer together than before */
+  font-weight: 500;             /* bold */
+  font-size: 2rem;
+}
+
+.ts-nav-main button {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.ts-nav button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Sections */
+.ts-section {
+  padding: 4rem 0;
+}
+
+.ts-hero {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Hero with big background logo */
+.ts-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.ts-hero-bg-logo {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0.15; /* controls transparency */
+}
+
+.ts-hero-bg-logo-img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.ts-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.ts-hero p {
+  max-width: 32rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.ts-primary-btn {
+  border: none;
+  background: #f59e0b; /* warm accent from logo */
+  color: #111827;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+/* Products grid */
+.ts-products .ts-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.ts-product-card {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+}
+
+/* Muted background sections */
+.ts-muted {
+  background: #f9fafb;
+}
+
+/* Footer */
+.ts-footer {
+  border-top: 1px solid #e5e7eb;
+  padding: 1.5rem 0;
+  background: #ffffff;
+}
+
+.ts-footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ts-footer-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.ts-footer a {
+  color: #111827;
+  text-decoration: none;
+}
+
+/* Basic responsive tweaks */
+@media (max-width: 768px) {
+  .ts-header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .ts-nav {
+    flex-wrap: wrap;
+    row-gap: 0.25rem;
+  }
+
+  .ts-hero h1 {
+    font-size: 2.25rem;
+  }
+}
